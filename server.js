@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const routes = require('./controllers');
-const send = require('send');
 const port = process.env.PORT || 3001;
 
 app.use(express.json());
