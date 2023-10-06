@@ -3,7 +3,7 @@ const Movie = require('./Movie');
 const Song = require('./Song');
 const Book = require('./Book');
 
-User.hasMany(Movie, Song, Book, {
+User.hasMany(Movie, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
@@ -30,4 +30,4 @@ Book.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-module.exports = { User, Movie, Song };
+module.exports = { User, Movie, Song, Book };
