@@ -1,8 +1,8 @@
 const router = require('express').Router();
 
-// /login
+// /profile
 router.get('/', (req, res) => {
-	res.json({ message: 'This is login page' });
+	res.json({ message: 'This is profile page' });
 });
 
 module.exports = router;
