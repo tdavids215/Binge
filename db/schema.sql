@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS binge_db;
+CREATE DATABASE binge_db;
