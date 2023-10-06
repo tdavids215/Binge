@@ -1,5 +1,6 @@
 const User = require('./User');
 const Movie = require('./Movie');
+const Song = require('./Song');
 
 User.hasMany(Movie, {
   foreignKey: 'user_id',
@@ -10,4 +11,8 @@ Movie.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-module.exports = { User, Movie };
+Song.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
+module.exports = { User, Movie, Song };
