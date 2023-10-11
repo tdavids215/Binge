@@ -5,15 +5,18 @@ var compiledTemplate = Handlebars.compile(boxTemplate);
 
 var box1Content = "Box 1";
 var box1ImageSource = "./assets/song.jpg";
-var box1ImageAlt = "Image 1 description";
-var box1Link = "https://example.com/song";
+var box1ImageAlt = "song image";
+var box1Link = "https://example.com/song";  //sam is working on the routes
+
+
 var box2Content = "Box 2";
 var box2ImageSource = "./assets/Movie.jpg";
-var box2ImageAlt = "Image 2 description";
+var box2ImageAlt = "movie image";
 var box2Link = "https://example.com/movie";
+
 var box3Content = "Box 3";
 var box3ImageSource = "./assets/books.jpg";
-var box3ImageAlt = "Image 3 description";
+var box3ImageAlt = "book image";
 var box3Link = "https://example.com/books";
 
 var generatedHTML = compiledTemplate({
