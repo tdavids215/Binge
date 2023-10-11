@@ -1,0 +1,9 @@
+<h2>Profile Page</h2>
+{{#each user as |user|}}
+	{{user.email}}
+	{{user.name}}
+{{/each}}
+
+{{#if loggedIn}}
+	<button id="logout-button">Log Out</button>
+{{/if}}
