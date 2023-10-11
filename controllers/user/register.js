@@ -27,6 +27,7 @@ router.post('/', async (req, res) => {
 		});
 		req.session.save(() => {
 			req.session.loggedIn = true;
+			req.session.userEmail = userData.email;
 			res.status(200).redirect('/profile');
 		});
 	} catch (err) {

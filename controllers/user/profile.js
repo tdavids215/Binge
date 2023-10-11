@@ -4,7 +4,12 @@ const withAuth = require('../../utils/auth');
 
 // /profile
 router.get('/', withAuth, async (req, res) => {
-	const user = await User.findAll();
+	const userData = await User.findOne({
+		where: {
+			email: req.session.userEmail,
+		},
+	});
+	const user = userData.get({ plain: true });
 	res.render('profile', { user, loggedIn: req.session.loggedIn });
 });
 
