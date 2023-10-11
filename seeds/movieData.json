@@ -1,0 +1,22 @@
+[
+    {
+        "name": "The Godfather",
+        "is_watched": true
+    },
+    {
+        "name": "The Shawshank Redemption",
+        "is_watched": false
+    },
+    {
+        "name": "The Dark Knight",
+        "is_watched": true
+    },
+    {
+        "name": "The Godfather: Part II",
+        "is_watched": false
+    },
+    {
+        "name": "12 Angry Men",
+        "is_watched": true
+    }
+]
