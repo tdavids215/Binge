@@ -1,0 +1,27 @@
+[
+    {
+        "name": "The Great Gatsby",
+        "is_read": true
+    },
+    {
+        "name": "War and Peace",
+        "is_watched": false
+    },
+    {
+        "name": "Hamlet",
+        "is_watched": true
+    },
+    {
+        "name": "The Odyssey",
+        "is_watched": false
+    },
+    {
+        "name": "Wuthering Heights",
+        "is_watched": true
+    },
+    {
+        "name": "The Catcher in the Rye",
+        "is_watched": false
+    }
+
+]

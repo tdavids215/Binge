@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Bohemian Rhapsody",
+        "description": "Queen",
+        "is_watched": true
+    },
+    {
+        "name": "Stairway to Heaven",
+        "description": "Led Zeppelin",
+        "is_watched": false
+    },
+    {
+        "name": "Hotel California",
+        "description": "Eagles",
+        "is_watched": true
+    },
+    {
+        "name": "Imagine",
+        "description": "John Lennon",
+        "is_watched": false
+    },
+    {
+        "name": "Smells Like Teen Spirit",
+        "description": "Nirvana",
+        "is_watched": true
+    }
+]
