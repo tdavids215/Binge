@@ -19,7 +19,21 @@ const seedDatabase = async () => {
         ...movie,
         user_id: users[Math.floor(Math.random() * users.length)].id,
       });
-    }
+    };
+
+    for (const song of songData) {
+        await Song.create({
+          ...song,
+          user_id: users[Math.floor(Math.random() * users.length)].id,
+        });
+      };
+
+      for (const book of bookData) {
+        await Book.create({
+          ...book,
+          user_id: users[Math.floor(Math.random() * users.length)].id,
+        });
+      }
   
     process.exit(0);
   };
