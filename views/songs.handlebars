@@ -1,0 +1,18 @@
+<button id='new-song-popup'>Add a new song</button>
+
+<dialog id='add-song-dialog'>
+	<label for='song-name'>Enter song name: </label>
+	<input type='text' id='song-name' />
+	<label for='song-description'>Add song description: </label>
+	<input type='text' id='song-description' />
+	<label for='have-listened-input'>listened </label>
+	<input type='checkbox' id='have-listened-input' />
+	<button id='add-song-button'>Add</button>
+</dialog>
+
+{{#each songs as |song|}}
+	<div class='song'>
+		<h3>{{song.name}}</h3>
+		<p>{{song.description}}</p>
+	</div>
+{{/each}}

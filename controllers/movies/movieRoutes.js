@@ -9,7 +9,7 @@ router.get('/', withAuth, async (req, res) => {
 	const user = userResult.get({ plain: true });
 	const userMoviesResult = await Movie.findAll({ where: { user_id: user.id } });
 	const userMovies = userMoviesResult.map((movie) => movie.get({ plain: true }));
-	res.render('movies', { loggedIn: req.session.loggedIn, movies: userMovies });
+	res.render('movies', { movies: userMovies });
 });
 
 router.post('/', withAuth, async (req, res) => {
