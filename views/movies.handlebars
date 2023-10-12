@@ -1,0 +1,18 @@
+<button id='new-movie-popup'>Add a movie</button>
+
+<dialog id='add-movie-dialog'>
+	<label for='movie-name'>Enter movie name: </label>
+	<input type='text' id='movie-name' />
+	<label for='movie-description'>Add movie description: </label>
+	<input type='text' id='movie-description' />
+	<label for='is-watched-input'></label>
+	<input type='checkbox' id='is-watched-input' />
+	<button id='add-movie-button'>Add</button>
+</dialog>
+
+{{#each movies as |movie|}}
+	<div class='user-movies'>
+		<h3>{{movie.name}}</h3>
+		<p>{{movie.description}}</p>
+	</div>
+{{/each}}

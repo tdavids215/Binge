@@ -4,6 +4,34 @@ const passwordInput = $('#password-input');
 const loginButton = $('#login-button');
 const registerButton = $('#register-button');
 const logoutButton = $('#logout-button');
+const movieNameInput = $('#movie-name');
+const movieDescriptionInput = $('#movie-description');
+const addMoviePopup = $('#new-movie-popup');
+const addMovieButton = $('#add-movie-button');
+const addMovieDialog = document.getElementById('add-movie-dialog');
+const isWatchedInput = $('#is-watched-input');
+
+addMoviePopup.on('click', async function (event) {
+	addMovieDialog.showModal();
+	addMovieButton.on('click', async function (event) {
+		const movieName = movieNameInput.val();
+		const movieDescription = movieDescriptionInput.val();
+		let isWatched = false;
+		if (isWatchedInput.prop('checked')) isWatched = true;
+		const result = await fetch('/movies', {
+			method: 'POST',
+			body: JSON.stringify({ movieName, movieDescription, isWatched }),
+			headers: { 'Content-Type': 'application/json' },
+		});
+
+		if (result.status === 200) {
+			console.log('Movie added successfully');
+			addMovieDialog.close();
+			window.location.reload();
+		}
+		if (result.status === 500) console.log('Error adding movie');
+	});
+});
 
 registerButton.on('click', async function (event) {
 	event.preventDefault();
