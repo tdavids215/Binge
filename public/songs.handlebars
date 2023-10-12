@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Binge - Your Watchlist</title>
+	<link rel="stylesheet" type="text/css" href="songs.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="logo">
+				<h1>Binge</h1>
+            </div>
+            <div class="topics">
+                <p>Books</p>
+            </div>
+            <div>
+                <p>Songs</p>
+            </div>
+            <div>
+                <p>Movies</p>
+            </div>
+			<div class="profile">
+				<a href="#">User</a>
+			</div>
+		</nav>
+	</header>
+	<h2 class="Movies">
+		My Songs
+		<span class="add-movie">Add a Song</span>
+	  </h2>
+	<main>
+		<div class="column">
+			<h3>Listened</h3>  <!--To do: revsise the css so that the h3 tags are in line with eachother-->
+			<ul id="movie-list">
+			</ul>
+			
+		</div>
+		<div class="column">
+			<h3>Queue</h3>
+			<ul id="song-list">
+			</ul>
+			
+		</div>
+
+	</main>
+	<script id="movie-template" type="text/x-handlebars-template">
+		{{#each this}}
+			<li>{{this}}</li>
+		{{/each}}
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+	<script>
+		var toWatch = ["Levitating - Dua Lipa", "Good 4 U - Olivia Rodrigo", "Stay - The Kid LAROI & Justin Bieber"];
+        var watched = ["Montero (Call Me By Your Name) - Lil Nas X", "Kiss Me More - Doja Cat ft. SZA", "Leave The Door Open - Silk Sonic"];
+
+var movieTemplate = Handlebars.compile(document.getElementById("movie-template").innerHTML);
+
+document.getElementById("movie-list").innerHTML = movieTemplate(toWatch);
+document.getElementById("song-list").innerHTML = movieTemplate(watched);
+
+		var movieTemplate = Handlebars.compile(document.getElementById("movie-template").innerHTML);
+
+		document.getElementById("movie-list").innerHTML = movieTemplate(toWatch);
+		document.getElementById("song-list").innerHTML = movieTemplate(watched);
+	</script>
+</body>
+</html>
