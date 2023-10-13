@@ -22,6 +22,28 @@ const addSongDialog = document.getElementById('add-song-dialog');
 const songNameInput = $('#song-name');
 const songDescriptionInput = $('#song-description');
 const haveListenedInput = $('#have-listened-input');
+const searchInput = $('#search-input');
+const searchButton = $('#search-button');
+
+searchButton.on('click', async function (event) {
+	const searchEmail = searchInput.val();
+	if (!searchEmail) return console.log('Please enter an email');
+	try {
+		const response = await fetch('/search', {
+			method: 'POST',
+			body: JSON.stringify({ email: searchEmail }),
+			headers: { 'Content-Type': 'application/json' },
+			redirect: 'follow',
+		});
+		if (response.ok) {
+			const result = await response.json();
+			window.location.href = `/search/${result.userId}`;
+		}
+		if (response.status === 400 || response.status === 500) console.log(await response.json());
+	} catch (err) {
+		console.log(err);
+	}
+});
 
 addSongPopup.on('click', async function (event) {
 	addSongDialog.showModal();
@@ -40,7 +62,7 @@ addSongPopup.on('click', async function (event) {
 			addSongDialog.close();
 			window.location.reload();
 		}
-		if (result.status === 500) console.log('Error adding song');
+		if (result.status === 500 || result.status === 500) console.log(await result.json());
 	});
 });
 
