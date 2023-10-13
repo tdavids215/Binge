@@ -1,21 +1,53 @@
 <html lang='en'>
 
-	<head>
-		<meta charset='utf-8' />
-		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
-		<title>Binge</title>
-		<script
-			src='https://code.jquery.com/jquery-3.7.1.js'
-			integrity='sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4='
-			crossorigin='anonymous'
-			defer
-		></script>
-		<script src='/js/script.js' defer></script>
-	</head>
+<head>
+	<meta charset='utf-8' />
+	<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+	<title>Binge</title>
+	<link rel="stylesheet" type="text/css" href="skeleton.css">
+	<script src='https://code.jquery.com/jquery-3.7.1.js'
+		integrity='sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=' crossorigin='anonymous' defer></script>
+	<script src='/js/script.js' defer></script>
+</head>
 
-	<body>
+<body>
+	<header>
+		<nav>
+			<div class="logo">
+				<h1>Binge</h1>
+			</div>
+			{{!--only shows user in nav when logged in --}}
+			{{#if loggedIn}}
+			<div class="topics">
+				<p>Books</p>
+			</div>
 
+			<div>
+				<p>Songs</p>
+			</div>
+
+			<div>
+				<p>Movies</p>
+			</div>
+			<div class="profile">
+				<a href="#">User</a>
+			</div>
+			{{/if}}
+		</nav>
+	</header>
+
+
+	<main>
 		{{{body}}}
+	</main>
+	<footer>
+		<div>
+			{{!-- render only for logged in users --}}
+			{{#if loggedIn}}
+			<button id='logout-button'>Log Out</button>
+			{{/if}}
+		</div>
+	</footer>
+</body>
 
-	</body>
 </html>
