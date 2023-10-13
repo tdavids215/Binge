@@ -24,7 +24,7 @@ const songDescriptionInput = $('#song-description');
 const haveListenedInput = $('#have-listened-input');
 
 addSongPopup.on('click', async function (event) {
-	addBookDialog.showModal();
+	addSongDialog.showModal();
 	addSongButton.on('click', async function (event) {
 		const songName = songNameInput.val();
 		const songDescription = songDescriptionInput.val();
