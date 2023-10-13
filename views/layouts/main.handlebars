@@ -28,10 +28,12 @@
 			<div>
 				<p>Movies</p>
 			</div>
-
+			{{!--only shows user in nav when logged in --}}
+			{{#if loggedIn}}
 			<div class="profile">
 				<a href="#">User</a>
 			</div>
+			{{/if}}
 		</nav>
 	</header>
 
@@ -42,8 +44,8 @@
 	<footer>
 		<div>
 			{{!-- render only for logged in users --}}
-			{{#if logged_in}}
-			<script src="/js/logout.js"></script>
+			{{#if loggedIn}}
+			<button id='logout-button'>Log Out</button>
 			{{/if}}
 		</div>
 	</footer>
