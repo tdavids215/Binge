@@ -16,7 +16,8 @@
 			<div class="logo">
 				<h1>Binge</h1>
 			</div>
-
+			{{!--only shows user in nav when logged in --}}
+			{{#if loggedIn}}
 			<div class="topics">
 				<p>Books</p>
 			</div>
@@ -28,8 +29,6 @@
 			<div>
 				<p>Movies</p>
 			</div>
-			{{!--only shows user in nav when logged in --}}
-			{{#if loggedIn}}
 			<div class="profile">
 				<a href="#">User</a>
 			</div>
