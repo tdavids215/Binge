@@ -1,9 +1,32 @@
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
+const User = require('../../models/User');
+const Book = require('../../models/Book');
 
 // /books
-router.get('/', withAuth, (req, res) => {
-	res.json({ message: 'This is books page' });
+router.get('/', withAuth, async (req, res) => {
+	const userData = await User.findOne({ where: { email: req.session.userEmail } });
+	const user = userData.get({ plain: true });
+	const userBooksData = await Book.findAll({ where: { user_id: user.id } });
+	const userBooks = userBooksData.map((book) => book.get({ plain: true }));
+	res.render('books', { books: userBooks });
+});
+
+router.post('/', withAuth, async (req, res) => {
+	try {
+		const userResult = await User.findOne({ where: { email: req.session.userEmail } });
+		const user = userResult.get({ plain: true });
+		const { bookName, bookDescription, isRead } = req.body;
+		const book = await Book.create({
+			name: bookName,
+			description: bookDescription,
+			is_read: isRead,
+			user_id: user.id,
+		});
+		res.status(200).json(book);
+	} catch (err) {
+		res.status(500).json(err);
+	}
 });
 
 module.exports = router;
