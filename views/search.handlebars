@@ -1,3 +1,10 @@
 <label for='search-input'>Search: </label>
 <input type='text' id='search-input' name='search-input' />
 <button id='search-button'>Search</button>
+
+{{#if user}}
+	<div>
+		<h3>{{user.name}}</h3>
+		<p>{{user.email}}</p>
+	</div>
+{{/if}}
