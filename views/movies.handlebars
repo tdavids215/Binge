@@ -1,0 +1,38 @@
+<main>
+	<h2 class='Movies'>
+		My Movies
+		<button id='new-movie-popup'>Add a movie</button>
+
+		<dialog id='add-movie-dialog'>
+			<label for='movie-name'>Enter movie name: </label>
+			<input type='text' id='movie-name' />
+			<label for='movie-description'>Add movie description: </label>
+			<input type='text' id='movie-description' />
+			<label for='is-watched-input'>watched </label>
+			<input type='checkbox' id='is-watched-input' />
+			<button id='add-movie-button'>Add</button>
+		</dialog>
+	</h2>
+
+	<div class='column'>
+		<h3>To Watch</h3>
+		<!--To do: revsise the css so that the h3 tags are in line with eachother-->
+		<ul id='movie-list'>
+			<!-- FOR TESTING-->
+			{{#each movies as |movie|}}
+				<div class='user-movies'>
+					<h3>{{movie.name}}</h3>
+					<p>{{movie.description}}</p>
+				</div>
+			{{/each}}
+		</ul>
+
+	</div>
+	<div class='column'>
+		<h3>Watched</h3>
+		<ul id='song-list'>
+		</ul>
+
+	</div>
+
+</main>

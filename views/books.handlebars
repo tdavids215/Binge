@@ -1,0 +1,18 @@
+<button id='new-book-popup'>Add a new book</button>
+
+<dialog id='add-book-dialog'>
+	<label for='book-name'>Enter book name: </label>
+	<input type='text' id='book-name' />
+	<label for='book-description'>Add book description: </label>
+	<input type='text' id='book-description' />
+	<label for='is-read-input'>have read </label>
+	<input type='checkbox' id='is-read-input' />
+	<button id='add-book-button'>Add</button>
+</dialog>
+
+{{#each books as |book|}}
+	<div class='user-books'>
+		<h3>{{book.name}}</h3>
+		<p>{{book.description}}</p>
+	</div>
+{{/each}}
