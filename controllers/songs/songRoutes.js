@@ -9,7 +9,9 @@ router.get('/', withAuth, async (req, res) => {
 	const user = userData.get({ plain: true });
 	const userSongsData = await Song.findAll({ where: { user_id: user.id } });
 	const userSongs = userSongsData.map((song) => song.get({ plain: true }));
-	res.render('songs', { songs: userSongs });
+	const haveListened = userSongs.filter((song) => song.listened === true);
+	const haveNotListened = userSongs.filter((song) => song.listened === false);
+	res.render('songs', { songs: userSongs, heardSongs: haveListened, unheardSongs: haveNotListened });
 });
 
 router.post('/', withAuth, async (req, res) => {

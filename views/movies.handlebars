@@ -18,19 +18,25 @@
 		<h3>To Watch</h3>
 		<!--To do: revsise the css so that the h3 tags are in line with eachother-->
 		<ul id='movie-list'>
-			<!-- FOR TESTING-->
-			{{#each movies as |movie|}}
+			{{#each unwatchedMovies as |unwatchedMovie|}}
 				<div class='user-movies'>
-					<h3>{{movie.name}}</h3>
-					<p>{{movie.description}}</p>
+					<h3>{{unwatchedMovie.name}}</h3>
+					<p>{{unwatchedMovie.description}}</p>
 				</div>
 			{{/each}}
+
 		</ul>
 
 	</div>
 	<div class='column'>
 		<h3>Watched</h3>
-		<ul id='song-list'>
+		<ul id='movie-list'>
+			{{#each watchedMovies as |watchedMovie|}}
+				<div class='user-movies'>
+					<h3>{{watchedMovie.name}}</h3>
+					<p>{{watchedMovie.description}}</p>
+				</div>
+			{{/each}}
 		</ul>
 
 	</div>
