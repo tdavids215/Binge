@@ -24,6 +24,22 @@ const songDescriptionInput = $('#song-description');
 const haveListenedInput = $('#have-listened-input');
 const searchInput = $('#search-input');
 const searchButton = $('#search-button');
+const newNameInput = $('#new-name-input');
+const changeNameButton = $('#change-name-button');
+
+changeNameButton.on('click', async function (event) {
+	const newName = newNameInput.val();
+	try {
+		const response = await axios.put('/profile', { newName });
+		if (response.status === 200) {
+			console.log('Name updated successfully');
+			window.location.reload();
+		}
+		if (response.status === 400 || response.status === 500) console.log('Error updating name');
+	} catch (err) {
+		if (err) console.log(err);
+	}
+});
 
 searchButton.on('click', async function (event) {
 	const searchEmail = searchInput.val();
