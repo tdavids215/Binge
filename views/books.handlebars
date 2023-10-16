@@ -9,10 +9,21 @@
 	<input type='checkbox' id='is-read-input' />
 	<button id='add-book-button'>Add</button>
 </dialog>
-
-{{#each books as |book|}}
-	<div class='user-books'>
-		<h3>{{book.name}}</h3>
-		<p>{{book.description}}</p>
-	</div>
-{{/each}}
+<section>
+	<h3>Have read: </h3>
+	{{#each readBooks as |readBook|}}
+		<div class='user-books'>
+			<h3>{{readBook.name}}</h3>
+			<p>{{readBook.description}}</p>
+		</div>
+	{{/each}}
+</section>
+<section>
+	<h3>Have not read: </h3>
+	{{#each unreadBooks as |unreadBook|}}
+		<div class='user-books'>
+			<h3>{{unreadBook.name}}</h3>
+			<p>{{unreadBook.description}}</p>
+		</div>
+	{{/each}}
+</section>

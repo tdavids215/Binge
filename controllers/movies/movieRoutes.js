@@ -9,7 +9,9 @@ router.get('/', withAuth, async (req, res) => {
 	const user = userResult.get({ plain: true });
 	const userMoviesResult = await Movie.findAll({ where: { user_id: user.id } });
 	const userMovies = userMoviesResult.map((movie) => movie.get({ plain: true }));
-	res.render('movies', { movies: userMovies });
+	const watchedMovies = userMovies.filter((movie) => movie.is_watched === true);
+	const unwatchedMovies = userMovies.filter((movie) => movie.is_watched === false);
+	res.render('movies', { movies: userMovies, watchedMovies, unwatchedMovies });
 });
 
 router.post('/', withAuth, async (req, res) => {

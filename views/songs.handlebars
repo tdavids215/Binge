@@ -16,12 +16,11 @@
 	<div class='column'>
 		<h3>Listened</h3>
 		<!--To do: revsise the css so that the h3 tags are in line with eachother-->
-		<ul id='movie-list'>
-
-			{{#each songs as |song|}}
+		<ul id='song-list'>
+			{{#each heardSongs as |heardSong|}}
 				<div class='song'>
-					<h3>{{song.name}}</h3>
-					<p>{{song.description}}</p>
+					<h3>{{heardSong.name}}</h3>
+					<p>{{heardSong.description}}</p>
 				</div>
 			{{/each}}
 		</ul>
@@ -30,6 +29,12 @@
 	<div class='column'>
 		<h3>Queue</h3>
 		<ul id='song-list'>
+			{{#each unheardSongs as |unheardSong|}}
+				<div class='song'>
+					<h3>{{unheardSong.name}}</h3>
+					<p>{{unheardSong.description}}</p>
+				</div>
+			{{/each}}
 		</ul>
 
 	</div>

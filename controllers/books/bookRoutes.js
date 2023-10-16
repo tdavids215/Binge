@@ -9,7 +9,9 @@ router.get('/', withAuth, async (req, res) => {
 	const user = userData.get({ plain: true });
 	const userBooksData = await Book.findAll({ where: { user_id: user.id } });
 	const userBooks = userBooksData.map((book) => book.get({ plain: true }));
-	res.render('books', { books: userBooks });
+	const readBooks = userBooks.filter((book) => book.is_read === true);
+	const unreadBooks = userBooks.filter((book) => book.is_read === false);
+	res.render('books', { books: userBooks, readBooks, unreadBooks });
 });
 
 router.post('/', withAuth, async (req, res) => {

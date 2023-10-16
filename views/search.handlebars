@@ -8,3 +8,44 @@
 		<p>{{user.email}}</p>
 	</div>
 {{/if}}
+
+<h3>watched movies: </h3>
+<ul>
+	<li>Number of watched movies: {{movieLength}}</li>
+	{{#each watchedMovies as |movie|}}
+		<li>{{movie.name}}</li>
+	{{/each}}
+</ul>
+
+<h3>watchlist: </h3>
+<ul>
+	{{#each unwatchedMovies as |movie|}}
+		<li>{{movie.name}}</li>
+	{{/each}}
+</ul>
+<h3>read books: </h3>
+<ul>
+	<li>Number of read books: {{bookLength}}</li>
+	{{#each readBooks as |book|}}
+		<li>{{book.name}}</li>
+	{{/each}}
+</ul>
+<h3>readlist: </h3>
+<ul>
+	{{#each unreadBooks as |book|}}
+		<li>{{book.name}}</li>
+	{{/each}}
+</ul>
+<h3>heard songs: </h3>
+<ul>
+	<li>Number of heard songs: {{songLength}}</li>
+	{{#each heardSongs as |song|}}
+		<li>{{song.name}}</li>
+	{{/each}}
+</ul>
+<h3>unheard songs: </h3>
+<ul>
+	{{#each unheardSongs as |song|}}
+		<li>{{song.name}}</li>
+	{{/each}}
+</ul>
