@@ -26,7 +26,21 @@
 					<div class='topics'>
 						<p>Books</p>
 					</div>
+	<body>
+		<header>
+			<nav>
+				<div class='logo'>
+					<h1>Binge</h1>
+				</div>
+				{{!only shows user in nav when logged in }}
+				{{#if loggedIn}}
+					<div class='topics'>
+						<p>Books</p>
+					</div>
 
+					<div>
+						<p>Songs</p>
+					</div>
 					<div>
 						<p>Songs</p>
 					</div>
@@ -40,7 +54,28 @@
 				{{/if}}
 			</nav>
 		</header>
+					<div>
+						<p>Movies</p>
+					</div>
+					<div class='profile'>
+						<a href='#'>User</a>
+					</div>
+				{{/if}}
+			</nav>
+		</header>
 
+		<main>
+			{{{body}}}
+		</main>
+		<footer>
+			<div>
+				{{! render only for logged in users }}
+				{{#if loggedIn}}
+					<button id='logout-button'>Log Out</button>
+				{{/if}}
+			</div>
+		</footer>
+	</body>
 		<main>
 			{{{body}}}
 		</main>
