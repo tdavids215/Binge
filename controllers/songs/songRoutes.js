@@ -11,7 +11,7 @@ router.get('/', withAuth, async (req, res) => {
 	const userSongs = userSongsData.map((song) => song.get({ plain: true }));
 	const haveListened = userSongs.filter((song) => song.listened === true);
 	const haveNotListened = userSongs.filter((song) => song.listened === false);
-	res.render('songs', { songs: userSongs, heardSongs: haveListened, unheardSongs: haveNotListened });
+	res.render('songs', { songs: userSongs, heardSongs: haveListened, unheardSongs: haveNotListened, loggedIn:true });
 });
 
 router.post('/', withAuth, async (req, res) => {

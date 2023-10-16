@@ -23,19 +23,20 @@
 				{{!only shows user in nav when logged in }}
 				{{#if loggedIn}}
 					<div class='topics'>
-						<p>Books</p>
+						<a class="button" href="/books">Books</a>
 					</div>
 
 					<div>
-						<p>Songs</p>
+						<a class="button" href="/songs">Songs</a>
 					</div>
 
 					<div>
-						<p>Movies</p>
+						<a class="button" href="/movies">Movies</a>
 					</div>
 					<div class='profile'>
-						<a href='#'>User</a>
+						<a class="button" href="/profile">User</a>
 					</div>
+					<button class="btn-logout" id='logout-button'>Log Out</button>
 				{{/if}}
 			</nav>
 		</header>

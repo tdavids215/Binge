@@ -11,7 +11,7 @@ router.get('/', withAuth, async (req, res) => {
 	const userMovies = userMoviesResult.map((movie) => movie.get({ plain: true }));
 	const watchedMovies = userMovies.filter((movie) => movie.is_watched === true);
 	const unwatchedMovies = userMovies.filter((movie) => movie.is_watched === false);
-	res.render('movies', { movies: userMovies, watchedMovies, unwatchedMovies });
+	res.render('movies', { movies: userMovies, watchedMovies, unwatchedMovies, loggedIn:true });
 });
 
 router.post('/', withAuth, async (req, res) => {
