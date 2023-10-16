@@ -1,7 +1,11 @@
 const router = require('express').Router();
+const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
-	res.json({ message: 'Home Page' });
+// home page
+router.get('/', withAuth, (req, res) => {
+	res.render('home', {
+		loggedIn: req.session.loggedIn,
+	});
 });
 
 module.exports = router;

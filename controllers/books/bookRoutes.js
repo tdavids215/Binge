@@ -11,7 +11,7 @@ router.get('/', withAuth, async (req, res) => {
 	const userBooks = userBooksData.map((book) => book.get({ plain: true }));
 	const readBooks = userBooks.filter((book) => book.is_read === true);
 	const unreadBooks = userBooks.filter((book) => book.is_read === false);
-	res.render('books', { books: userBooks, readBooks, unreadBooks });
+	res.render('books', { books: userBooks, readBooks, unreadBooks, loggedIn: req.session.loggedIn });
 });
 
 router.post('/', withAuth, async (req, res) => {

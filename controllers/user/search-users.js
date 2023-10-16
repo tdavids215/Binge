@@ -11,10 +11,43 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/:id', withAuth, async (req, res) => {
 	try {
 		const searchId = req.params.id;
-		const resultData = await User.findOne({ where: { id: searchId } });
-		if (!resultData) return res.status(404).json({ message: 'No user found' });
-		const result = resultData.get({ plain: true });
-		res.status(200).render('search', { user: result });
+		const userData = await User.findOne({ where: { id: searchId } });
+		if (!userData) return res.status(404).json({ message: 'No user found' });
+		const user = userData.get({ plain: true });
+
+		const songsData = await Song.findAll({ where: { user_id: user.id } });
+		const songs = songsData.map((song) => song.get({ plain: true }));
+		const heardSongs = songs.filter((song) => song.listened === true);
+		const songLength = heardSongs.length;
+		const unheardSongs = songs.filter((song) => song.listened === false);
+
+		const booksData = await Book.findAll({ where: { user_id: user.id } });
+		const books = booksData.map((book) => book.get({ plain: true }));
+		const readBooks = books.filter((book) => book.is_read === true);
+		const bookLength = readBooks.length;
+		const unreadBooks = books.filter((book) => book.is_read === false);
+
+		const moviesData = await Movie.findAll({ where: { user_id: user.id } });
+		const movies = moviesData.map((movie) => movie.get({ plain: true }));
+		const watchedMovies = movies.filter((movie) => movie.is_watched === true);
+		const movieLength = watchedMovies.length;
+		const unwatchedMovies = movies.filter((movie) => movie.is_watched === false);
+
+		res
+			.status(200)
+			.render('search', {
+				user,
+				heardSongs,
+				unheardSongs,
+				readBooks,
+				unreadBooks,
+				watchedMovies,
+				unwatchedMovies,
+				songLength,
+				bookLength,
+				movieLength,
+				loggedIn: req.session.loggedIn,
+			});
 	} catch (error) {
 		if (error) {
 			console.log(error);
