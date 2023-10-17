@@ -49,6 +49,7 @@ router.get('/:id', withAuth, async (req, res) => {
 				songLength,
 				bookLength,
 				movieLength,
+				loggedIn: req.session.loggedIn,
 			});
 	} catch (error) {
 		if (error) {
