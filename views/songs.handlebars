@@ -1,42 +1,45 @@
-<h2 class='Movies'>
-	My Songs
-	<button id='new-song-popup'>Add a new song</button>
+<main>
+	<div class='media-top'>
+		<h2 class='media-h2'>My Songs</h2>
+		<button id='new-song-popup'>Add a new song</button>
+	</div>
 
 	<dialog id='add-song-dialog'>
-		<label for='song-name'>Enter song name: </label>
-		<input type='text' id='song-name' />
-		<label for='song-description'>Add song description: </label>
-		<input type='text' id='song-description' />
-		<label for='have-listened-input'>listened </label>
-		<input type='checkbox' id='have-listened-input' />
-		<button id='add-song-button'>Add</button>
+		<div class='dialog-wrapper'>
+			<input type='text' id='song-name' placeholder='Song Name' />
+			<input type='text' id='song-description' placeholder='Description/Artist' />
+			<label class='dialog-label' for='have-listened-input'>Listened?</label>
+			<input type='checkbox' id='have-listened-input' />
+			<button id='add-song-button'>Add</button>
+		</div>
 	</dialog>
-</h2>
-<main>
-	<div class='letter'>
-		<h3>Listened</h3>
+	<section class='content-area'>
+
+		<div>
+			<h3 class='media-h3'>In queue</h3>
+			<hr />
+			<ul class='media-ul'>
+				{{#each heardSongs as |heardSong|}}
+					<li class='media-li-title'>{{heardSong.name}}</li>
+					<li class='media-li-description'>{{heardSong.description}}</li>
+				{{/each}}
+			</ul>
+		</div>
+
 		<!--To do: revsise the css so that the h3 tags are in line with eachother-->
-		<ul id='song-list'>
-			{{#each heardSongs as |heardSong|}}
-				<div class='song'>
-					<h3>{{heardSong.name}}</h3>
-					<p>{{heardSong.description}}</p>
-				</div>
-			{{/each}}
-		</ul>
 
-	</div>
-	<div class='letter'>
-		<h3>Queue</h3>
-		<ul id='song-list'>
-			{{#each unheardSongs as |unheardSong|}}
-				<div class='song'>
-					<h3>{{unheardSong.name}}</h3>
-					<p>{{unheardSong.description}}</p>
-				</div>
-			{{/each}}
-		</ul>
+		<div>
+			<h3 class='media-h3'>Listened</h3>
+			<hr />
+			<ul class='media-ul'>
+				{{#each unheardSongs as |unheardSong|}}
+					<li class='media-li-title'>{{unheardSong.name}}</li>
+					<li class='media-li-description'>{{unheardSong.description}}</li>
+				{{/each}}
+			</ul>
 
-	</div>
+		</div>
+
+	</section>
 
 </main>

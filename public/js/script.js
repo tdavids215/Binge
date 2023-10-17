@@ -42,6 +42,7 @@ changeNameButton.on('click', async function (event) {
 });
 
 searchButton.on('click', async function (event) {
+	event.preventDefault();
 	const searchEmail = searchInput.val();
 	if (!searchEmail) return console.log('Please enter an email');
 	try {

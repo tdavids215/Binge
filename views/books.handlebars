@@ -1,29 +1,38 @@
-<button id='new-book-popup'>Add a new book</button>
+<div class='media-top'>
+	<h2 class='media-h2'>My books</h2>
+	<button id='new-book-popup'>Add a new book</button>
+</div>
 
 <dialog id='add-book-dialog'>
-	<label for='book-name'>Enter book name: </label>
-	<input type='text' id='book-name' />
-	<label for='book-description'>Add book description: </label>
-	<input type='text' id='book-description' />
-	<label for='is-read-input'>have read </label>
-	<input type='checkbox' id='is-read-input' />
-	<button id='add-book-button'>Add</button>
+	<div class='dialog-wrapper'>
+		<input type='text' id='book-name' placeholder='Book Name' />
+		<input type='text' id='book-description' placeholder='Description/Creator Name' />
+		<label class='dialog-label' for='is-read-input'>Read?</label>
+		<input class='switch-button' type='checkbox' id='is-read-input' />
+		<button id='add-book-button'>Add</button>
+	</div>
 </dialog>
-<section>
-	<h3>Have read: </h3>
-	{{#each readBooks as |readBook|}}
-		<div class='user-books'>
-			<h3>{{readBook.name}}</h3>
-			<p>{{readBook.description}}</p>
-		</div>
-	{{/each}}
-</section>
-<section>
-	<h3>Have not read: </h3>
-	{{#each unreadBooks as |unreadBook|}}
-		<div class='user-books'>
-			<h3>{{unreadBook.name}}</h3>
-			<p>{{unreadBook.description}}</p>
-		</div>
-	{{/each}}
+<section class='content-area'>
+	<div>
+		<h3 class='media-h3'>Want to read</h3>
+		<hr />
+		<ul class='media-ul'>
+			{{#each readBooks as |readBook|}}
+				<li class='media-li-title'>{{readBook.name}}</li>
+				<li class='media-li-description'>{{readBook.description}}</li>
+			{{/each}}
+		</ul>
+	</div>
+
+	<div>
+		<h3 class='media-h3'>Have read</h3>
+		<hr />
+		<ul class='media-ul'>
+			{{#each unreadBooks as |unreadBook|}}
+				<li class='media-li-title'>{{unreadBook.name}}</li>
+				<li class='media-li-description'>{{unreadBook.description}}</li>
+			{{/each}}
+		</ul>
+	</div>
+
 </section>
