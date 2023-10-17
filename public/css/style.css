@@ -1,0 +1,140 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: rgb(35, 6, 119);
+	color: white;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+/* /register and /login styles */
+.reg-container {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: translateY(-10%);
+}
+
+.reg-input {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 2rem;
+	font-size: 5rem;
+}
+
+.reg-input > input {
+	padding: 0.5em;
+	border-color: transparent;
+	border-radius: 4rem;
+	background-color: rgba(11, 1, 43, 0.5);
+	color: white;
+	outline: none;
+}
+
+.reg-input > input:focus,
+.reg-input > input:hover {
+	border-color: white;
+}
+
+.reg-btn {
+	border-color: transparent;
+	text-align: left;
+	color: rgba(255, 255, 255, 0.75);
+	background-color: transparent;
+}
+
+.to-other {
+	color: rgba(255, 255, 255, 0.5);
+	transform: translateY(-150%);
+	text-align: right;
+	padding: 2em;
+	font-size: 3rem;
+}
+
+.reg-btn:hover {
+	color: white;
+}
+
+/* /profile styles */
+.profile-title {
+	text-align: center;
+	font-size: 4rem;
+	color: rgb(255, 242, 227);
+	padding: 1em;
+}
+
+.profile-section {
+	font-size: 3rem;
+	padding: 0.5em;
+	margin-left: 10rem;
+}
+
+.profile-section > * {
+	padding: 1em 0;
+}
+
+.change-pass-btn {
+	margin-top: 1em;
+	font-size: 2rem;
+	padding: 0.75em;
+	border-radius: 2rem;
+	border-color: transparent;
+	text-align: left;
+	color: rgba(255, 255, 255, 0.75);
+	background-color: rgba(11, 1, 43, 0.25);
+}
+
+.change-pass-btn:hover,
+.change-pass-btn:focus {
+	color: white;
+	background-color: rgba(11, 1, 43, 1);
+}
+
+.profile-new-name-warning {
+	color: rgb(5, 255, 242);
+	font-size: 2rem;
+}
+
+.new-name-input {
+	font-size: 1.5rem;
+	padding: 0.75em;
+	border-width: 1px;
+	border-color: transparent;
+	border-radius: 4rem;
+	background-color: rgba(11, 1, 43, 0.5);
+	color: white;
+	outline: none;
+}
+
+.new-name-input:hover {
+	border-color: white;
+}
+
+.change-name-button {
+	margin-top: 1em;
+	font-size: 1.5rem;
+	padding: 0.75em;
+	border-color: transparent;
+	border-radius: 4rem;
+	background-color: rgba(11, 1, 43, 0.25);
+	color: white;
+	outline: none;
+}
+
+.change-name-button:hover,
+.change-name-button:focus {
+	color: white;
+	background-color: rgba(11, 1, 43, 1);
+}
