@@ -1,8 +1,10 @@
-<h2>Profile Page</h2>
+<h2 class='profile-title'>Your Profile</h2>
+<section class='profile-section'>
+	<p>Name: {{user.name}}</p>
+	<p>email: {{user.email}}</p>
+	<p class='profile-new-name-warning'>If you want to change your user name, enter the new name below</p>
+	<input type='text' class='new-name-input' id='new-name-input' placeholder='New Name' /><br />
+	<button class='change-name-button' id='change-name-button'>Change Name</button>
+	<p>Password: <button class='change-pass-btn'>Change Password</button></p>
 
-{{user.name}}<br />
-{{user.email}}<br />
-
-<label for='new-name-input'>New Name: </label>
-<input type='text' id='new-name-input' />
-<button id='change-name-button'>Change Name</button>
+</section>
