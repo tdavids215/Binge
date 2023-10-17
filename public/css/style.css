@@ -78,6 +78,13 @@ dialog button:focus {
 	font-size: 1.5rem;
 }
 
+/* main styles */
+#custom-nav a:hover,
+#custom-nav a:focus {
+	color: rgb(5, 242, 101);
+	background-color: transparent;
+}
+
 /* /register and /login styles */
 .reg-container {
 	height: 100%;
@@ -295,6 +302,7 @@ dialog button:focus {
 
 .media-h3 {
 	font-size: 3rem;
+	color: rgb(142, 200, 252);
 }
 
 .media-top button:hover,
@@ -313,6 +321,51 @@ dialog button:focus {
 
 .media-li-description {
 	color: rgba(255, 255, 255, 0.5);
+}
+
+/* /search styles */
+
+.searched-user-info {
+	margin: 1rem;
+	font-size: 4rem;
+	text-align: center;
+	font-weight: bold;
+	margin: 2rem 0;
+}
+
+.search-media {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+}
+
+.search-card {
+	border-radius: 1rem;
+	background-color: rgba(11, 1, 43, 0.5);
+	padding: 1em;
+}
+
+.search-card h3 {
+	color: rgb(142, 200, 252);
+	font-size: 3rem;
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.search-card ul {
+	margin-bottom: 1em;
+	font-size: 3rem;
+}
+
+.search-card li {
+	margin: 0.4rem 0;
+}
+
+.total-count {
+	color: rgb(233, 78, 78);
+	font-size: 3rem;
+	text-align: center;
+	margin-bottom: 1em;
 }
 
 @media screen and (min-width: 768px) {
