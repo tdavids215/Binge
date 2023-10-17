@@ -8,16 +8,57 @@
 	</head>
 	<body>
 		<!-- start -->
-		<h2 class="profile-title">Your Profile</h2>
-		<section class="profile-section">
-			<p>Name:</p>
-			<p>email:</p>
-      <p class="profile-new-name-warning">If you want to change your user name, enter the new name below</p>
-      <input type="text" class="new-name-input" id="new-name-input" placeholder="New Name" /><br>
-      <button class="change-name-button" id="change-name-button">Change Name</button>
-			<p>Password: <button class="change-pass-btn">Change Password</button></p>
+		<main class="search-main">
+			<h2 class="searched-user-info">{{user.name}}'s profile</h2>
+			<section class="search-media">
+				<div class="search-card">
+					<h3>watched movies:</h3>
+					<ul>
+						<li>Number of watched movies: {{movieLength}}</li>
+						{{#each watchedMovies as |movie|}}
+						<li>{{movie.name}}</li>
+						{{/each}}
+					</ul>
 
-		</section>
+					<h3>watchlist:</h3>
+					<ul>
+						{{#each unwatchedMovies as |movie|}}
+						<li>{{movie.name}}</li>
+						{{/each}}
+					</ul>
+				</div>
+				<div class="search-card">
+					<h3>read books:</h3>
+					<ul>
+						<li>Number of read books: {{bookLength}}</li>
+						{{#each readBooks as |book|}}
+						<li>{{book.name}}</li>
+						{{/each}}
+					</ul>
+					<h3>readlist:</h3>
+					<ul>
+						{{#each unreadBooks as |book|}}
+						<li>{{book.name}}</li>
+						{{/each}}
+					</ul>
+				</div>
+				<div class="search-card">
+					<h3>heard songs:</h3>
+					<ul>
+						<li>Number of heard songs: {{songLength}}</li>
+						{{#each heardSongs as |song|}}
+						<li>{{song.name}}</li>
+						{{/each}}
+					</ul>
+					<h3>unheard songs:</h3>
+					<ul>
+						{{#each unheardSongs as |song|}}
+						<li>{{song.name}}</li>
+						{{/each}}
+					</ul>
+				</div>
+			</section>
+		</main>
 		<!-- finish -->
 	</body>
 </html>

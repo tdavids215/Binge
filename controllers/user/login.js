@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
 		req.session.save(() => {
 			req.session.loggedIn = true;
 			req.session.userEmail = email;
-			res.status(200).redirect('/profile');
+			res.status(200).redirect('/');
 		});
 	} catch (err) {
 		console.log(err);

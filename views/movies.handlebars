@@ -1,44 +1,46 @@
 <main>
-	<h2 class='Movies'>
-		My Movies
+	<div class='media-top'>
+		<h2 class="media-h2">My movies</h2>
 		<button id='new-movie-popup'>Add a movie</button>
+	</div>
 
-		<dialog id='add-movie-dialog'>
-			<label for='movie-name'>Enter movie name: </label>
-			<input type='text' id='movie-name' />
-			<label for='movie-description'>Add movie description: </label>
-			<input type='text' id='movie-description' />
-			<label for='is-watched-input'>watched </label>
+	<dialog id='add-movie-dialog'>
+		<div class='dialog-wrapper'>
+			<input type='text' id='movie-name' placeholder='Movie Name' />
+			<input type='text' id='movie-description' placeholder='Description/Director' />
+			<label class='dialog-label' for='is-watched-input'>watched?</label>
 			<input type='checkbox' id='is-watched-input' />
 			<button id='add-movie-button'>Add</button>
-		</dialog>
-	</h2>
+		</div>
+	</dialog>
 
-	<div class='column'>
-		<h3>To Watch</h3>
-		<!--To do: revsise the css so that the h3 tags are in line with eachother-->
-		<ul id='movie-list'>
-			{{#each unwatchedMovies as |unwatchedMovie|}}
-				<div class='user-movies'>
-					<h3>{{unwatchedMovie.name}}</h3>
-					<p>{{unwatchedMovie.description}}</p>
-				</div>
-			{{/each}}
+	<section class='content-area'>
+		<div>
+			<h3 class="media-h3">Want to Watch</h3>
+			<hr>
+			<ul class='media-ul'>
+				{{#each unwatchedMovies as |unwatchedMovie|}}
 
-		</ul>
+					<li class='media-li-title'>{{unwatchedMovie.name}}</li>
+					<li class='media-li-description'>{{unwatchedMovie.description}}</li>
 
-	</div>
-	<div class='column'>
-		<h3>Watched</h3>
-		<ul id='movie-list'>
-			{{#each watchedMovies as |watchedMovie|}}
-				<div class='user-movies'>
-					<h3>{{watchedMovie.name}}</h3>
-					<p>{{watchedMovie.description}}</p>
-				</div>
-			{{/each}}
-		</ul>
+				{{/each}}
 
-	</div>
+			</ul>
+		</div>
+
+		<div>
+			<h3 class="media-h3">Watched</h3>
+			<hr>
+			<ul class='media-ul'>
+				{{#each watchedMovies as |watchedMovie|}}
+
+					<li class='media-li-title'>{{watchedMovie.name}}</li>
+					<li class='media-li-description'>{{watchedMovie.description}}</li>
+				{{/each}}
+			</>
+		</div>
+
+	</section>
 
 </main>
