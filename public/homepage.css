@@ -1,0 +1,50 @@
+.twig {
+	background-color: #230677;
+	color: white;
+	margin: 0;
+	padding: 0;
+}
+    .bi {
+      font-size: 30px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    .na {
+        font-size: 30px;
+        margin-right: 10px;
+    }
+
+    .risk {
+    background-color: #0B012B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    color: white;
+    }
+
+    .risk p {
+      flex: 1;
+      text-align: center;
+    }
+
+
+    .world {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 50px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 40px;
+        text-align: center;
+        margin-top: 10%;
+      }
+    
+    .world a {
+      flex-basis: calc(33.33% - 20px);
+      margin: 10px;
+      color: rgb(80, 125, 215);
+    }
