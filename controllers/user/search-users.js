@@ -2,7 +2,7 @@ const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 const User = require('../../models/User');
 const Song = require('../../models/Song');
-const Book = require('../../models/Book');
+const Book = require('../../models/book');
 const Movie = require('../../models/Movie');
 
 // /search
