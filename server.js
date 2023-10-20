@@ -7,7 +7,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
 require('dotenv').config();
-const port = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
 
 app.use(
 	session({
@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-	app.listen(port, () => {
-		console.log(`Server running on port ${port}`);
+	app.listen(PORT, () => {
+		console.log(`Server running on port ${PORT}`);
 	});
 });
