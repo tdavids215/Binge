@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@200;400;700;800&family=Satisfy&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -6,6 +8,7 @@
 body {
 	background-color: rgb(19, 2, 65);
 	color: white;
+	font-family: 'Playpen Sans', sans-serif;
 }
 
 a {
@@ -79,6 +82,22 @@ dialog button:focus {
 }
 
 /* main styles */
+
+.binge {
+	font-family: 'Satisfy', cursive;
+	font-size: 5rem;
+	padding-top: 0.5em;
+	margin-right: 3rem;
+}
+
+#custom-nav {
+	font-size: 3rem;
+	box-shadow: 0px 12px 17px -6px rgba(0, 0, 0, 0.48);
+	-webkit-box-shadow: 0px 12px 17px -6px rgba(0, 0, 0, 0.48);
+	-moz-box-shadow: 0px 12px 17px -6px rgba(0, 0, 0, 0.48);
+	background-color: rgb(16, 2, 54);
+}
+
 #custom-nav a:hover,
 #custom-nav a:focus {
 	color: rgb(5, 242, 101);
@@ -128,7 +147,11 @@ dialog button:focus {
 	transform: translateY(-150%);
 	text-align: right;
 	padding: 2em;
-	font-size: 3rem;
+	font-size: 2rem;
+}
+
+.to-other a {
+	font-size: 4rem;
 }
 
 .reg-btn:hover {
@@ -207,6 +230,11 @@ dialog button:focus {
 	background-color: rgba(11, 1, 43, 1);
 }
 
+.warning {
+	color: rgb(255, 5, 5);
+	font-size: 2rem;
+}
+
 /* /home styles */
 
 .card-container {
@@ -283,26 +311,28 @@ dialog button:focus {
 
 .media-top {
 	font-size: 2rem;
-	display: flex;
-	justify-content: space-between;
 	padding: 2em;
 }
 
 .media-top button {
+	border: 1px solid white;
+	border-radius: 0.5rem;
 	color: white;
 	padding: 1em;
 	background-color: transparent;
-	border-color: transparent;
 	font-size: 1.5rem;
 }
 
 .media-h2 {
 	font-size: 4rem;
+	color: rgb(255, 237, 176);
+	text-align: center;
 }
 
 .media-h3 {
 	font-size: 3rem;
 	color: rgb(142, 200, 252);
+	text-align: center;
 }
 
 .media-top button:hover,
@@ -371,5 +401,11 @@ dialog button:focus {
 @media screen and (min-width: 768px) {
 	.card-container {
 		flex-direction: row;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.content-area {
+		flex-direction: column;
 	}
 }
